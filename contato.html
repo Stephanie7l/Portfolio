@@ -1,61 +1,86 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contato | Stéphanie Barbosa</title>
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-</head>
-<body>
-  <header>
-    <nav class="navbar">
-      <h1 class="logo">Stéphanie Barbosa</h1>
-      <div class="menu-toggle" id="menu-toggle">
-        <span></span>
-        <span></span>
-        <span></span>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Solicitar Orçamento | Stéphanie Barbosa</title>
+    <meta
+      name="description"
+      content="Solicite um orçamento para landing pages, sites, sistemas web e consultoria tecnológica."
+    />
+    <link
+      rel="canonical"
+      href="https://stephanie7l.github.io/portfolio/contato.html"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="container navbar">
+        <a class="brand" href="index.html">
+          <img
+            class="brand-logo"
+            src="assets/img/logo.png"
+            alt="Logo Stéphanie Barbosa"
+          />
+          <span class="brand-name">Stéphanie Barbosa</span>
+        </a>
+        <nav class="nav-links">
+          <a href="sobre.html">Sobre Mim</a>
+          <a href="servicos/landing-pages.html">Serviços</a>
+          <a href="portfolio/index.html">Portfólio</a>
+          <a href="contato.html">Orçamento</a>
+        </nav>
+        <a class="btn" href="contato.html">Solicitar Orçamento</a>
       </div>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="projetos.html">Projetos</a></li>
-        <li><a href="contato.html">Contato</a></li>
-      </ul>
-    </nav>
-  </header>
+    </header>
 
-  <main>
-    <section class="intro">
-      <h2>Contato</h2>
-      <p>Entre em contato comigo pelos canais abaixo ou envie uma mensagem pelo formulário.</p>
+    <section class="section" style="padding-top: 140px">
+      <div class="container">
+        <div class="section-title">
+          <h1>Solicitar Orçamento</h1>
+          <p>
+            Preencha as informações abaixo e envie diretamente para meu
+            WhatsApp.
+          </p>
+        </div>
 
-      <ul class="contact-info">
-        <li>Email: <a href="mailto:stephanie@email.com">stephanie@email.com</a></li>
-        <li>LinkedIn: <a href="https://linkedin.com/in/stephaniebarbosa" target="_blank">/stephaniebarbosa</a></li>
-        <li>GitHub: <a href="https://github.com/stephaniebarbosa" target="_blank">/stephaniebarbosa</a></li>
-      </ul>
-
-      <form class="contact-form">
-        <input type="text" name="nome" placeholder="Seu nome" required>
-        <input type="email" name="email" placeholder="Seu e-mail" required>
-        <textarea name="mensagem" placeholder="Sua mensagem" rows="5" required></textarea>
-        <button type="submit">Enviar</button>
-      </form>
+        <div class="card">
+          <form onsubmit="enviarWhatsApp(event)">
+            <input type="text" id="nome" placeholder="Seu nome" required />
+            <select id="servico">
+              <option>Landing Page</option>
+              <option>Site Profissional</option>
+              <option>Sistema Web</option>
+              <option>Consultoria Tecnológica</option>
+            </select>
+            <textarea
+              id="mensagem"
+              rows="5"
+              placeholder="Descreva seu projeto..."
+            ></textarea>
+            <button class="btn" type="submit">Enviar para WhatsApp</button>
+          </form>
+        </div>
+      </div>
     </section>
-  </main>
 
-  <footer>
-    <p>&copy; 2025 Stéphanie Barbosa</p>
-  </footer>
+    <footer>
+      © <span id="year"></span> Stéphanie Barbosa — Tecnologia & Inovação
+    </footer>
 
-  <script>
-    const menuToggle = document.getElementById('menu-toggle');
-    const navLinks = document.getElementById('nav-links');
-    menuToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-    });
-  </script>
-</body>
+    <a
+      class="whatsapp-float"
+      href="https://wa.me/5531985499733"
+      target="_blank"
+      rel="noopener"
+      >💬 Tirar dúvidas</a
+    >
+
+    <script src="assets/js/main.js"></script>
+  </body>
 </html>
