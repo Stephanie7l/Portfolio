@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://stephanie7l.github.io/portfolio/</loc></url>
-  <url><loc>https://stephanie7l.github.io/portfolio/sobre.html</loc></url>
-  <url><loc>https://stephanie7l.github.io/portfolio/contato.html</loc></url>
-  <url><loc>https://stephanie7l.github.io/portfolio/portfolio/</loc></url>
-  <url><loc>https://stephanie7l.github.io/portfolio/portfolio/landing-page.html</loc></url>
-  <url><loc>https://stephanie7l.github.io/portfolio/servicos/landing-pages.html</loc></url>
+  <url>
+    <loc>https://stephanie7l.github.io/portfolio/</loc>
+    <lastmod>2026-03-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
 </urlset>

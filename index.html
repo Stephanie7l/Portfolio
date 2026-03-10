@@ -6,17 +6,18 @@
     <title>Stéphanie Barbosa | Landing Pages, Sites e Sistemas</title>
     <meta
       name="description"
-      content="Desenvolvimento de landing pages, sites profissionais, sistemas web e consultoria tecnológica."
+      content="Desenvolvimento de landing pages, sites profissionais e sistemas web com foco em conversão, organização e resultado."
     />
     <meta name="robots" content="index,follow" />
     <link rel="canonical" href="https://stephanie7l.github.io/portfolio/" />
+
     <meta
       property="og:title"
-      content="Stéphanie Barbosa | Landing Pages, Sites e Sistemas"
+      content="Stéphanie Barbosa | Desenvolvimento de Sites e Sistemas"
     />
     <meta
       property="og:description"
-      content="Soluções digitais estratégicas com foco em resultado."
+      content="Landing pages, sites profissionais e sistemas web com foco em resultado."
     />
     <meta property="og:type" content="website" />
     <meta
@@ -27,91 +28,339 @@
       property="og:image"
       content="https://stephanie7l.github.io/portfolio/og-image.png"
     />
+
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="manifest" href="site.webmanifest" />
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="icon" href="favicon.ico" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
-    <header>
+    <header class="site-header">
       <div class="container navbar">
-        <a class="brand" href="index.html">
+        <a href="#topo" class="brand">
           <img
             class="brand-logo"
             src="assets/img/logo.png"
             alt="Logo Stéphanie Barbosa"
           />
-          <span class="brand-name">Stéphanie Barbosa</span>
+          <span class="logo">Stéphanie Barbosa</span>
         </a>
 
-        <nav class="nav-links">
-          <a href="sobre.html">Sobre Mim</a>
-          <a href="servicos/landing-pages.html">Serviços</a>
-          <a href="portfolio/index.html">Portfólio</a>
-          <a href="contato.html">Orçamento</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+          <span></span><span></span><span></span>
+        </button>
+
+        <nav class="nav-links" id="navLinks">
+          <a href="#servicos">Serviços</a>
+          <a href="#portfolio">Portfólio</a>
+          <a href="#feedback">Feedback</a>
+          <a href="#contato">Orçamento</a>
         </nav>
 
-        <a class="btn" href="contato.html">Solicitar Orçamento</a>
+        <a href="#contato" class="btn nav-cta">Solicitar orçamento</a>
       </div>
     </header>
 
-    <section class="hero">
-      <div class="container">
-        <h1>Inovação com criatividade e estratégia.</h1>
-        <p>
-          Desenvolvimento de landing pages, sites profissionais, sistemas web e
-          consultoria tecnológica com foco em performance, organização e
-          resultado.
-        </p>
-        <div class="hero-actions">
-          <a class="btn" href="contato.html">Iniciar Projeto</a>
-          <a class="btn" href="portfolio/index.html">Ver Portfólio</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="section-title">
-          <h2>Principais Serviços</h2>
-          <p>Soluções digitais modernas e personalizadas.</p>
-        </div>
-
-        <div class="grid">
-          <div class="card">
-            <h3>Landing Pages</h3>
-            <p>Estruturadas para conversão e geração de leads qualificados.</p>
-          </div>
-          <div class="card">
-            <h3>Sites Profissionais</h3>
+    <main id="topo">
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-content">
+            <span class="eyebrow"
+              >Tecnologia • Estratégia • Presença digital</span
+            >
+            <h1>
+              Criação de sites, landing pages e sistemas web com foco em
+              resultado.
+            </h1>
             <p>
-              Design limpo, responsivo e estratégico para autoridade digital.
+              Desenvolvo soluções digitais para profissionais e empresas que
+              desejam fortalecer sua presença online, transmitir credibilidade e
+              gerar mais oportunidades.
+            </p>
+
+            <div class="hero-actions">
+              <a href="#contato" class="btn">Solicitar orçamento</a>
+              <a href="#portfolio" class="btn btn-outline">Ver modelos</a>
+            </div>
+
+            <div class="hero-badges">
+              <span>✔ Design moderno</span>
+              <span>✔ Sites responsivos</span>
+              <span>✔ Integração com WhatsApp</span>
+              <span>✔ Estrutura profissional</span>
+            </div>
+          </div>
+
+          <div class="hero-card">
+            <div class="glass-card">
+              <h3>O que você recebe</h3>
+              <ul>
+                <li>Layout profissional e personalizado</li>
+                <li>Site leve e adaptado ao celular</li>
+                <li>Estrutura pensada para conversão</li>
+                <li>Contato rápido via WhatsApp</li>
+                <li>Publicação gratuita no GitHub Pages</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="servicos">
+        <div class="container">
+          <div class="section-title">
+            <h2>Serviços</h2>
+            <p>
+              Soluções digitais personalizadas para diferentes necessidades.
             </p>
           </div>
-          <div class="card">
-            <h3>Sistemas Web</h3>
+
+          <div class="cards">
+            <article class="card">
+              <div class="icon-circle">LP</div>
+              <h3>Landing Pages</h3>
+              <p>
+                Páginas estratégicas focadas em divulgação, captação de leads e
+                conversão.
+              </p>
+            </article>
+
+            <article class="card">
+              <div class="icon-circle">WS</div>
+              <h3>Sites Profissionais</h3>
+              <p>
+                Sites institucionais modernos para empresas e profissionais que
+                desejam fortalecer sua presença digital.
+              </p>
+            </article>
+
+            <article class="card">
+              <div class="icon-circle">SYS</div>
+              <h3>Sistemas Web</h3>
+              <p>
+                Desenvolvimento de sistemas personalizados para organização de
+                processos e dados.
+              </p>
+            </article>
+
+            <article class="card">
+              <div class="icon-circle">CT</div>
+              <h3>Consultoria Tecnológica</h3>
+              <p>
+                Análise e orientação para estruturar soluções digitais
+                eficientes para seu negócio.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-soft" id="portfolio">
+        <div class="container">
+          <div class="section-title">
+            <h2>Modelos de projetos</h2>
             <p>
-              Automação personalizada e organização digital para processos
-              internos.
+              Exemplos do tipo de estrutura que pode ser desenvolvida para o seu
+              negócio.
+            </p>
+          </div>
+
+          <div class="portfolio-grid">
+            <article class="portfolio-item">
+              <div class="portfolio-thumb">
+                <img
+                  src="assets/img/preview-landing.jpg"
+                  alt="Preview de landing page"
+                />
+              </div>
+              <div class="portfolio-content">
+                <span>Landing Page</span>
+                <h4>Modelo Conversão</h4>
+                <p>
+                  Página focada em geração de contatos, apresentação clara da
+                  oferta e vendas.
+                </p>
+              </div>
+            </article>
+
+            <article class="portfolio-item">
+              <div class="portfolio-thumb">
+                <img
+                  src="assets/img/preview-site.jpg"
+                  alt="Preview de site profissional"
+                />
+              </div>
+              <div class="portfolio-content">
+                <span>Site Institucional</span>
+                <h4>Modelo Profissional</h4>
+                <p>
+                  Estrutura elegante para empresas e profissionais que precisam
+                  transmitir autoridade.
+                </p>
+              </div>
+            </article>
+
+            <article class="portfolio-item">
+              <div class="portfolio-thumb">
+                <img
+                  src="assets/img/preview-sistema.jpg"
+                  alt="Preview de sistema web"
+                />
+              </div>
+              <div class="portfolio-content">
+                <span>Sistema Web</span>
+                <h4>Modelo Gestão</h4>
+                <p>
+                  Painel para controle interno, organização de informações e
+                  automação de rotinas.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="sobre">
+        <div class="container">
+          <div class="section-title">
+            <h2>Sobre mim</h2>
+            <p>
+              Formação técnica, visão estratégica e atuação prática em
+              tecnologia.
+            </p>
+          </div>
+
+          <div class="about-box">
+            <p>
+              Sou técnica em Eletrônica pelo CEFET-MG e graduanda em Engenharia
+              de Sistemas pela UFMG, com sólida formação técnica e visão
+              sistêmica aplicada à tecnologia. Minha atuação é voltada ao
+              desenvolvimento de soluções digitais estruturadas, eficientes e
+              orientadas a resultado.
+            </p>
+            <p>
+              Possuo experiência em desenvolvimento de sistemas web, criação de
+              sites profissionais em WordPress e HTML/CSS, elaboração de
+              interfaces estratégicas no Figma e gestão de projetos
+              tecnológicos.
+            </p>
+            <p>
+              Minha trajetória também inclui atuação em controle de qualidade,
+              análise de falhas, estruturação de banco de dados e elaboração de
+              relatórios técnicos, fortalecendo minha capacidade analítica e
+              foco em excelência operacional.
+            </p>
+            <p>
+              Atualmente, desenvolvo aplicativos para controle interno,
+              estruturo bases de dados estratégicas e automatizo processos,
+              transformando demandas complexas em soluções digitais organizadas,
+              funcionais e escaláveis.
             </p>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <footer>
-      © <span id="year"></span> Stéphanie Barbosa — Tecnologia & Inovação
-    </footer>
+      <section class="section section-soft" id="feedback">
+        <div class="container">
+          <div class="section-title">
+            <h2>Feedback</h2>
+            <p>Depoimentos sobre trabalhos realizados.</p>
+          </div>
+
+          <div class="testimonials">
+            <article class="testimonial">
+              <p>
+                “Profissional extremamente organizada e estratégica. O trabalho
+                transmitiu mais autoridade para minha presença digital.”
+              </p>
+              <strong>Cliente — Advogada</strong>
+            </article>
+
+            <article class="testimonial">
+              <p>
+                “Entrega rápida, comunicação clara e visual moderno. O resultado
+                superou minhas expectativas.”
+              </p>
+              <strong>Cliente — Empresário</strong>
+            </article>
+
+            <article class="testimonial">
+              <p>
+                “O sistema desenvolvido facilitou nossa rotina interna e
+                melhorou a organização dos processos.”
+              </p>
+              <strong>Cliente — Gestor</strong>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section cta-section">
+        <div class="container">
+          <div class="cta-box">
+            <h2>Precisa de um site profissional?</h2>
+            <p>
+              Entre em contato e solicite um orçamento personalizado para o seu
+              projeto.
+            </p>
+            <a href="#contato" class="btn btn-dark">Falar sobre meu projeto</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="contato">
+        <div class="container contact-grid">
+          <div class="contact-text">
+            <h2>Solicitar orçamento</h2>
+            <p>
+              Preencha as informações abaixo e envie diretamente para meu
+              WhatsApp.
+            </p>
+
+            <div class="contact-list">
+              <div>WhatsApp: (31) 98549-9733</div>
+              <div>E-mail: stephaniepb45@gmail.com</div>
+              <div>Atendimento digital para diferentes tipos de projeto</div>
+            </div>
+          </div>
+
+          <form class="contact-form" onsubmit="enviarWhatsApp(event)">
+            <input type="text" id="nome" placeholder="Seu nome" required />
+
+            <select id="servico">
+              <option>Landing Page</option>
+              <option>Site Profissional</option>
+              <option>Sistema Web</option>
+              <option>Consultoria</option>
+            </select>
+
+            <textarea
+              rows="5"
+              id="mensagem"
+              placeholder="Descreva seu projeto, objetivo e prazo..."
+            ></textarea>
+
+            <button class="btn" type="submit">Enviar para WhatsApp</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer>© <span id="year"></span> Stéphanie Barbosa</footer>
 
     <a
       class="whatsapp-float"
       href="https://wa.me/5531985499733"
       target="_blank"
       rel="noopener"
-      >💬 Tirar dúvidas</a
+      >💬 WhatsApp</a
     >
 
     <script src="assets/js/main.js"></script>
