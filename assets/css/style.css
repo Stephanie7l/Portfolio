@@ -419,3 +419,138 @@ footer{
     font-size:15px;
   }
 }
+
+/* =========================
+   MENU HAMBÚRGUER (MOBILE)
+   ========================= */
+
+/* botão hambúrguer */
+.nav-toggle{
+  display:none;
+  width:46px;
+  height:46px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,.10);
+  background:rgba(255,255,255,.03);
+  cursor:pointer;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+  flex-direction:column;
+}
+
+.nav-toggle:focus{
+  outline:2px solid rgba(142,169,255,.6);
+  outline-offset:2px;
+}
+
+.nav-toggle-bar{
+  width:22px;
+  height:2px;
+  background:var(--text);
+  border-radius:10px;
+  transition:transform .2s ease, opacity .2s ease;
+}
+
+/* desktop: CTA fora do menu */
+.nav-desktop-cta{ display:inline-flex; }
+/* mobile: CTA dentro do menu */
+.nav-cta{ display:none; }
+
+/* garante que o nav funcione como nav mesmo no desktop */
+nav.nav-links{ display:flex; }
+
+/* overlay no mobile quando o menu está aberto */
+.nav-overlay{
+  display:none;
+}
+
+/* TABLET e abaixo: já começa a preparar o menu */
+@media (max-width: 900px){
+  /* remove o wrap “bagunçado” e deixa a área do topo mais estável */
+  .navbar{
+    flex-wrap:nowrap;
+    justify-content:space-between;
+    text-align:left;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 560px){
+  /* mostra o botão hambúrguer */
+  .nav-toggle{
+    display:inline-flex;
+  }
+
+  /* some CTA do desktop e mostra CTA dentro do menu */
+  .nav-desktop-cta{
+    display:none;
+  }
+  .nav-cta{
+    display:inline-flex;
+    width:100%;
+    max-width:none;
+  }
+
+  /* menu vira painel */
+  .nav-links{
+    position:fixed;
+    top:74px;                 /* abaixo do header (ajustado via header padding) */
+    left:12px;
+    right:12px;
+    display:none;             /* fechado por padrão */
+    flex-direction:column;
+    gap:10px;
+    padding:14px;
+    border-radius:16px;
+    background:rgba(11,15,26,.98);
+    border:1px solid rgba(255,255,255,.08);
+    box-shadow:0 20px 60px rgba(0,0,0,.45);
+    z-index:1100;
+  }
+
+  /* links com área de toque */
+  .nav-links a:not(.btn){
+    padding:12px 12px;
+    border-radius:12px;
+    background:rgba(255,255,255,.03);
+    color:var(--text);
+    font-weight:700;
+    text-align:center;
+  }
+
+  /* quando aberto */
+  .nav-links.is-open{
+    display:flex;
+  }
+
+  /* overlay por trás */
+  .nav-overlay{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.45);
+    z-index:1050;
+  }
+  .nav-overlay.is-open{
+    display:block;
+  }
+
+  /* animação do hambúrguer para X */
+  .nav-toggle.is-open .nav-toggle-bar:nth-child(1){
+    transform:translateY(8px) rotate(45deg);
+  }
+  .nav-toggle.is-open .nav-toggle-bar:nth-child(2){
+    opacity:0;
+  }
+  .nav-toggle.is-open .nav-toggle-bar:nth-child(3){
+    transform:translateY(-8px) rotate(-45deg);
+  }
+}
+
+/* Acessibilidade: respeita usuários com redução de movimento */
+@media (prefers-reduced-motion: reduce){
+  .nav-toggle-bar{
+    transition:none;
+  }
+}
