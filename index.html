@@ -30,23 +30,37 @@
 
 
 <header>
+  <div class="container navbar">
+    <div class="brand">
+      <img class="brand-logo" src="assets/img/logo-header.png" alt="Logo">
+    </div>
 
-<div class="container navbar">
+    <!-- Botão hambúrguer (aparece no mobile) -->
+    <button
+      class="nav-toggle"
+      type="button"
+      aria-label="Abrir menu"
+      aria-expanded="false"
+      aria-controls="primary-navigation"
+    >
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+    </button>
 
-<div class="brand">
-<img class="brand-logo" src="assets/img/logo-header.png" alt="Logo">
-</div>
+    <!-- Navegação -->
+    <nav id="primary-navigation" class="nav-links" aria-label="Menu principal">
+      <a href="#sobre">Sobre</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#contato">Orçamento</a>
 
-<div class="nav-links">
-<a href="#sobre">Sobre</a>
-<a href="#servicos">Serviços</a>
-<a href="#contato">Orçamento</a>
-</div>
+      <!-- CTA duplicado dentro do menu para mobile (fica melhor no UX) -->
+      <a href="#contato" class="btn nav-cta">Solicitar orçamento</a>
+    </nav>
 
-<a href="#contato" class="btn">Solicitar orçamento</a>
-
-</div>
-
+    <!-- CTA desktop (some no mobile) -->
+    <a href="#contato" class="btn nav-desktop-cta">Solicitar orçamento</a>
+  </div>
 </header>
 
 
