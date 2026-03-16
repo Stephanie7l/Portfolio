@@ -40,10 +40,10 @@ header {
   gap: 20px;
 }
 
-.brand-logo { height: 45px; width: auto; }
+.brand-logo { height: 62px; width: auto; display: block; }
 
 .nav-links { display: flex; gap: 28px; align-items: center; }
-.nav-links a { color: var(--muted); font-weight: 600; transition: .2s; }
+.nav-links a { color: var(--muted); font-weight: 600; transition: .2s; text-decoration: none; }
 .nav-links a:hover { color: var(--text); }
 
 .nav-cta { display: none; } /* Escondido no Desktop */
@@ -58,6 +58,7 @@ header {
   border: none;
   font-weight: 700;
   color: #000;
+  text-decoration: none;
   cursor: pointer;
   transition: .25s;
 }
