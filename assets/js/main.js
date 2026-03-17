@@ -21,19 +21,16 @@ document.addEventListener("DOMContentLoaded", () => {
         toggle.addEventListener("click", toggleMenu);
         overlay.addEventListener("click", toggleMenu);
         
-        // Fecha ao clicar em links
         nav.querySelectorAll("a").forEach(link => {
             link.addEventListener("click", () => {
                 if (nav.classList.contains("is-open")) toggleMenu();
             });
         });
 
-        // Fecha menu com tecla ESC
         document.addEventListener("keydown", (e) => {
             if (e.key === "Escape" && nav.classList.contains("is-open")) toggleMenu();
         });
 
-        // Corrige overflow ao redimensionar tela
         window.addEventListener("resize", () => {
             if (window.innerWidth > 900 && nav.classList.contains("is-open")) {
                 nav.classList.remove("is-open");
@@ -44,6 +41,42 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }
+
+    // 3. Fade-in ao rolar
+    const fadeEls = document.querySelectorAll(".fade-in");
+    if ("IntersectionObserver" in window && fadeEls.length) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, i) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add("visible");
+                    }, i * 80);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12 });
+        fadeEls.forEach(el => observer.observe(el));
+    } else {
+        fadeEls.forEach(el => el.classList.add("visible"));
+    }
+
+    // 4. FAQ Accordion
+    document.querySelectorAll(".faq-question").forEach(btn => {
+        btn.addEventListener("click", () => {
+            const item = btn.closest(".faq-item");
+            const isOpen = item.classList.contains("is-open");
+            // Fecha todos
+            document.querySelectorAll(".faq-item.is-open").forEach(open => {
+                open.classList.remove("is-open");
+                open.querySelector(".faq-question").setAttribute("aria-expanded", "false");
+            });
+            // Abre o clicado (se estava fechado)
+            if (!isOpen) {
+                item.classList.add("is-open");
+                btn.setAttribute("aria-expanded", "true");
+            }
+        });
+    });
 });
 
 function enviarWhatsApp(e) {

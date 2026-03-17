@@ -92,15 +92,63 @@ header {
   color: #000;
   text-decoration: none;
   cursor: pointer;
-  transition: 0.25s;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+.btn:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 8px 24px rgba(92, 140, 255, 0.4);
+  filter: brightness(1.08);
 }
 
 /* HERO */
 .hero {
   padding: clamp(120px, 15vw, 180px) 0 clamp(60px, 8vw, 100px);
   text-align: center;
+  position: relative;
+  overflow: hidden;
 }
-
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -120px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(92,140,255,0.12) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+.hero .container {
+  position: relative;
+  z-index: 1;
+}
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(92, 140, 255, 0.12);
+  border: 1px solid rgba(92, 140, 255, 0.3);
+  color: var(--accent-soft);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 999px;
+  margin-bottom: 22px;
+  letter-spacing: 0.03em;
+}
+.hero-badge .dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #4ade80;
+  box-shadow: 0 0 6px #4ade80;
+  animation: pulse-dot 2s infinite;
+}
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
 .hero h1 {
   font-size: clamp(32px, 5vw, 60px);
   line-height: 1.1;
@@ -114,6 +162,9 @@ header {
 }
 
 /* SEÇÕES E GRIDS */
+[id] {
+  scroll-margin-top: 90px;
+}
 .section {
   padding: 80px 0;
 }
@@ -152,6 +203,115 @@ header {
   object-fit: cover;
 }
 
+.about-text p {
+  color: var(--muted);
+  line-height: 1.75;
+  margin-bottom: 14px;
+}
+.about-text p:last-child {
+  margin-bottom: 0;
+}
+
+.about-stats {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255,255,255,0.07);
+}
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.stat-number {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--accent-soft);
+  line-height: 1;
+}
+.stat-label {
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ÍCONES DOS CARDS */
+.card-icon {
+  font-size: 32px;
+  margin-bottom: 14px;
+  display: block;
+}
+.cards .card h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: 700;
+}
+.cards .card p {
+  color: var(--muted);
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+/* FAQ */
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.faq-item {
+  border-radius: 14px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  overflow: hidden;
+  transition: border-color 0.25s;
+}
+.faq-item:hover {
+  border-color: rgba(92,140,255,0.25);
+}
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 20px 24px;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+.faq-question .faq-chevron {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  color: var(--accent);
+  transition: transform 0.3s;
+}
+.faq-item.is-open .faq-chevron {
+  transform: rotate(180deg);
+}
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, padding 0.3s;
+  padding: 0 24px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.7;
+}
+.faq-item.is-open .faq-answer {
+  max-height: 300px;
+  padding: 0 24px 20px;
+}
+
 /* FORMULÁRIO */
 .cta-box {
   padding: 40px;
@@ -185,11 +345,16 @@ footer {
 .footer-inner {
   width: min(1100px, 92%);
   margin: 0 auto;
-  padding: 20px 0;
+  padding: 48px 0 28px;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 40px;
+}
+
+.footer-brand {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 18px;
+  flex-direction: column;
+  gap: 14px;
 }
 
 .footer-logo {
@@ -198,10 +363,75 @@ footer {
   display: block;
 }
 
-.footer-text {
+.footer-tagline {
   color: var(--muted);
   font-size: 14px;
-  text-align: right;
+  line-height: 1.6;
+  max-width: 220px;
+}
+
+.footer-social {
+  display: flex;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.footer-social a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.footer-social a:hover {
+  color: var(--text);
+  border-color: rgba(92,140,255,0.4);
+}
+
+.footer-col h4 {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+
+.footer-col ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-col ul li a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s;
+}
+
+.footer-col ul li a:hover {
+  color: var(--text);
+}
+
+.footer-bottom {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+  padding: 18px 0;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-text {
+  color: var(--muted);
+  font-size: 13px;
 }
 
 /* BOTAO FLUTUANTE WHATSAPP */
@@ -249,6 +479,27 @@ footer {
 }
 
 /* RESPONSIVIDADE */
+/* FADE-IN AO ROLAR */
+.fade-in {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* CONFIANÇA NO FORM */
+.form-trust {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: rgba(17,17,17,0.6);
+  margin-top: 4px;
+}
+
 @media (max-width: 900px) {
   .nav-links {
     position: fixed;
@@ -282,12 +533,17 @@ footer {
   }
 
   .footer-inner {
-    flex-direction: column;
-    align-items: flex-start;
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 36px 0 24px;
   }
-
+  .footer-bottom {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
   .footer-text {
-    text-align: left;
+    text-align: center;
   }
 
   .whatsapp-float {
