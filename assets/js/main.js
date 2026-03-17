@@ -13,7 +13,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const isOpen = nav.classList.toggle("is-open");
         toggle.classList.toggle("is-open");
         overlay.classList.toggle("is-open");
-        body.style.overflow = isOpen ? "hidden" : ""; // Trava o scroll
+        toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        body.style.overflow = isOpen ? "hidden" : "";
     }
 
     if (toggle) {
@@ -25,6 +26,22 @@ document.addEventListener("DOMContentLoaded", () => {
             link.addEventListener("click", () => {
                 if (nav.classList.contains("is-open")) toggleMenu();
             });
+        });
+
+        // Fecha menu com tecla ESC
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape" && nav.classList.contains("is-open")) toggleMenu();
+        });
+
+        // Corrige overflow ao redimensionar tela
+        window.addEventListener("resize", () => {
+            if (window.innerWidth > 900 && nav.classList.contains("is-open")) {
+                nav.classList.remove("is-open");
+                toggle.classList.remove("is-open");
+                overlay.classList.remove("is-open");
+                toggle.setAttribute("aria-expanded", "false");
+                body.style.overflow = "";
+            }
         });
     }
 });

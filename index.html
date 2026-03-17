@@ -3,6 +3,13 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Stéphanie Barbosa — Desenvolvimento de sites profissionais, landing pages e sistemas web para fortalecer sua presença online." />
+    <meta property="og:title" content="Stéphanie Barbosa | Desenvolvimento de Sites e Sistemas" />
+    <meta property="og:description" content="Soluções digitais estratégicas para profissionais e empresas que desejam fortalecer sua presença online." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Stéphanie Barbosa | Desenvolvimento de Sites e Sistemas" />
+    <meta name="twitter:description" content="Soluções digitais estratégicas para profissionais e empresas." />
     <title>Stéphanie Barbosa | Desenvolvimento de Sites e Sistemas</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
@@ -66,7 +73,7 @@
         </div>
         <div class="about-grid">
           <div class="about-photo card">
-            <img src="assets/img/foto.png" alt="Stéphanie Barbosa" />
+            <img src="assets/img/foto.png" alt="Stéphanie Barbosa" loading="lazy" />
           </div>
           <div class="card about-text">
             <p>
@@ -138,17 +145,20 @@
             Preencha as informações abaixo e envie diretamente para o WhatsApp.
           </p>
           <form onsubmit="enviarWhatsApp(event)">
-            <input type="text" id="nome" placeholder="Seu nome" required />
+            <label for="nome">Seu nome</label>
+            <input type="text" id="nome" placeholder="Ex: João Silva" required />
+            <label for="servico">Tipo de serviço</label>
             <select id="servico">
               <option>Landing Page</option>
               <option>Site Profissional</option>
               <option>Sistema Web</option>
               <option>Consultoria</option>
             </select>
+            <label for="mensagem">Descreva seu projeto</label>
             <textarea
               rows="4"
               id="mensagem"
-              placeholder="Descreva seu projeto"
+              placeholder="Conte um pouco sobre o que você precisa..."
             ></textarea>
             <button class="btn" type="submit">Enviar para WhatsApp</button>
           </form>
