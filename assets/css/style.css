@@ -261,7 +261,7 @@ header {
 
 /* FAQ */
 #faq.section {
-  background: #ececec;
+  background: transparent;
 }
 
 #faq .section-title {
@@ -270,39 +270,46 @@ header {
 }
 
 #faq .section-title h2 {
-  color: #2447aa;
-  font-size: clamp(44px, 7vw, 72px);
+  color: var(--text);
+  font-size: clamp(34px, 5vw, 56px);
   font-weight: 800;
   letter-spacing: 0.01em;
   line-height: 1;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 #faq .section-title p {
-  color: #4b5563;
-  font-size: clamp(24px, 2.3vw, 36px);
-  font-weight: 500;
+  color: var(--muted);
+  font-size: clamp(16px, 2vw, 24px);
+  font-weight: 600;
 }
 
 .faq-list {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 12px;
 }
 
 .faq-item {
-  background: transparent;
-  border: none;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
   overflow: hidden;
+  transition: border-color 0.25s, transform 0.2s;
+}
+
+.faq-item:hover {
+  border-color: rgba(92, 140, 255, 0.3);
+  transform: translateY(-1px);
 }
 
 .faq-question {
   width: 100%;
-  background: #2447aa;
+  background: transparent;
   border: none;
-  color: #fff;
+  color: var(--text);
   font-family: inherit;
-  font-size: clamp(22px, 1.8vw, 33px);
+  font-size: clamp(16px, 1.4vw, 20px);
   font-weight: 600;
   padding: 18px 24px;
   text-align: left;
@@ -314,10 +321,10 @@ header {
 }
 
 .faq-question .faq-chevron {
-  width: 22px;
-  height: 22px;
+  width: 20px;
+  height: 20px;
   flex-shrink: 0;
-  color: #fff;
+  color: var(--accent-soft);
   transition: transform 0.3s;
 }
 
@@ -329,16 +336,16 @@ header {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.35s ease, padding 0.3s;
-  padding: 0 18px;
-  color: #777;
-  font-size: clamp(16px, 1.35vw, 26px);
+  padding: 0 24px;
+  color: var(--muted);
+  font-size: clamp(15px, 1.05vw, 17px);
   line-height: 1.65;
-  background: #ececec;
+  background: rgba(255, 255, 255, 0.01);
 }
 
 .faq-item.is-open .faq-answer {
   max-height: 420px;
-  padding: 26px 18px 30px;
+  padding: 0 24px 22px;
 }
 
 /* FORMULÁRIO */
@@ -625,11 +632,16 @@ footer {
 
   .faq-question {
     padding: 14px 16px;
-    font-size: 20px;
+    font-size: 16px;
   }
 
   .faq-answer {
     font-size: 16px;
+    padding: 0 16px;
+  }
+
+  .faq-item.is-open .faq-answer {
+    padding: 0 16px 16px;
   }
 }
 
