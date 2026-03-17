@@ -150,36 +150,6 @@
       </div>
     </section>
 
-    <section class="cta" id="contato">
-      <div class="container">
-        <div class="cta-box fade-in">
-          <h2>Solicitar orçamento</h2>
-          <p>
-            Preencha as informações abaixo e envie diretamente para o WhatsApp.
-          </p>
-          <form onsubmit="enviarWhatsApp(event)">
-            <label for="nome">Seu nome</label>
-            <input type="text" id="nome" placeholder="Ex: João Silva" required />
-            <label for="servico">Tipo de serviço</label>
-            <select id="servico">
-              <option>Landing Page</option>
-              <option>Site Profissional</option>
-              <option>Sistema Web</option>
-              <option>Consultoria</option>
-            </select>
-            <label for="mensagem">Descreva seu projeto</label>
-            <textarea
-              rows="4"
-              id="mensagem"
-              placeholder="Conte um pouco sobre o que você precisa..."
-            ></textarea>
-            <button class="btn" type="submit">Enviar para WhatsApp</button>
-            <p class="form-trust">⏱️ Respondo em até 24h &mdash; sem compromisso.</p>
-          </form>
-        </div>
-      </div>
-    </section>
-
     <section class="section" id="faq">
       <div class="container">
         <div class="section-title fade-in">
@@ -222,6 +192,38 @@
             </button>
             <div class="faq-answer">Sim. Ofereço suporte pós-entrega e manutenção mediante contrato. Assim você fica tranquilo sabendo que o site continuará funcionando e atualizado.</div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="contato">
+      <div class="container">
+        <div class="cta-box fade-in">
+          <h2>Solicitar orçamento</h2>
+          <p>
+            Preencha as informações abaixo e envie diretamente para o WhatsApp.
+          </p>
+          <form onsubmit="enviarWhatsApp(event)">
+            <label for="nome">Seu nome</label>
+            <input type="text" id="nome" placeholder="Ex: João Silva" required />
+            <label for="servico">Tipo de serviço</label>
+            <select id="servico">
+              <option>Landing Page</option>
+              <option>Site Profissional</option>
+              <option>Sistema Web</option>
+              <option>Consultoria</option>
+            </select>
+            <label for="mensagem">Descreva seu projeto</label>
+            <textarea
+              rows="4"
+              id="mensagem"
+              placeholder="Conte um pouco sobre o que você precisa..."
+            ></textarea>
+            <div class="form-submit-wrapper">
+              <button class="btn" type="submit">Enviar para WhatsApp</button>
+              <p class="form-trust">⏱️ Respondo em até 24h — sem compromisso.</p>
+            </div>
+          </form>
         </div>
       </div>
     </section>
