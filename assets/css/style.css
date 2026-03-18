@@ -1,4 +1,4 @@
-:root {
+﻿:root {
   --bg: #0b0f1a;
   --accent: #5c8cff;
   --accent-soft: #8ea9ff;
@@ -164,7 +164,7 @@ header {
   line-height: 1.7;
 }
 
-/* SEÇÕES E GRIDS */
+/* SEÃ‡Ã•ES E GRIDS */
 [id] {
   scroll-margin-top: 90px;
 }
@@ -242,7 +242,7 @@ header {
   letter-spacing: 0.05em;
 }
 
-/* ÍCONES DOS CARDS */
+/* ÃCONES DOS CARDS */
 .card-icon {
   font-size: 32px;
   margin-bottom: 14px;
@@ -348,7 +348,7 @@ header {
   padding: 0 24px 22px;
 }
 
-/* FORMULÁRIO */
+/* FORMULÃRIO */
 .cta-box {
   padding: 40px;
   border-radius: 22px;
@@ -358,6 +358,10 @@ header {
 
 .cta-box h2 {
   margin-bottom: 16px;
+}
+
+.cta-box > p {
+  margin-bottom: 28px;
 }
 
 form label {
@@ -381,12 +385,14 @@ form textarea {
 }
 
 .btn[type="submit"] {
-  padding: 16px 36px;
-  font-size: 16px;
-  font-weight: 700;
-  letter-spacing: 0.03em;
+  padding: 18px 38px;
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
   width: auto;
-  min-width: 200px;
+  min-width: 230px;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 14px 30px rgba(25, 40, 90, 0.35);
 }
 
 .form-submit-wrapper {
@@ -525,7 +531,7 @@ footer {
   pointer-events: none;
 }
 
-/* MENU HAMBÚRGUER (BOTÃO) */
+/* MENU HAMBÃšRGUER (BOTÃƒO) */
 .nav-toggle {
   display: none;
   flex-direction: column;
@@ -555,7 +561,7 @@ footer {
   transform: translateY(0);
 }
 
-/* CONFIANÇA NO FORM */
+/* CONFIANÃ‡A NO FORM */
 .form-trust {
   display: flex;
   align-items: center;
@@ -633,7 +639,7 @@ footer {
     font-size: 14px;
   }
 
-  /* Animação X */
+  /* AnimaÃ§Ã£o X */
   .nav-toggle.is-open .nav-toggle-bar:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
   }
@@ -657,13 +663,13 @@ footer {
   .form-submit-wrapper {
     gap: 12px;
   }
-  
+
   .btn[type="submit"] {
     padding: 14px 24px;
     font-size: 15px;
     min-width: 160px;
   }
-  
+
   .form-trust {
     font-size: 13px;
   }
@@ -697,12 +703,12 @@ footer {
     flex-direction: column;
     gap: 12px;
   }
-  
+
   .btn[type="submit"] {
     width: 100%;
     padding: 16px 24px;
   }
-  
+
   .form-trust {
     width: 100%;
     justify-content: center;
@@ -728,3 +734,7 @@ footer {
 .nav-overlay.is-open {
   display: block;
 }
+
+
+
+
