@@ -430,107 +430,117 @@ form textarea {
 /* FOOTER */
 footer {
   border-top: 1px solid rgba(255, 255, 255, 0.08);
-  background: rgba(11, 15, 26, 0.7);
+  background: rgba(11, 15, 26, 0.75);
 }
 
 .footer-inner {
   width: min(1100px, 92%);
   margin: 0 auto;
-  padding: 44px 28px 30px;
+  padding: 26px 0 14px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
-  text-align: center;
-  border-radius: 18px;
-  background: linear-gradient(180deg, rgba(17, 26, 50, 0.9), rgba(11, 17, 35, 0.9));
-  border: 1px solid rgba(92, 140, 255, 0.25);
+  grid-template-columns: 1.2fr 1.6fr 1fr 1fr;
+  gap: 24px;
+  align-items: start;
 }
 
 .footer-brand {
   display: flex;
-  flex-direction: column;
-  gap: 14px;
-  align-items: center;
+  justify-content: center;
 }
 
 .footer-logo {
-  height: 34px;
-  width: auto;
+  width: min(220px, 100%);
+  height: auto;
   display: block;
 }
 
-.footer-tagline {
+.footer-middle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding-top: 8px;
+}
+
+.footer-highlight {
+  width: 100%;
+  min-height: 110px;
+  border: 2px solid rgba(92, 140, 255, 0.9);
+  border-radius: 2px;
   color: var(--muted);
-  font-size: 14px;
-  line-height: 1.7;
-  max-width: 280px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
+  padding: 16px;
 }
 
 .footer-social {
   display: flex;
-  gap: 12px;
-  margin-top: 4px;
+  gap: 10px;
   justify-content: center;
 }
 
 .footer-social a {
-  color: var(--muted);
+  color: #b8c8ef;
   text-decoration: none;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
-  padding: 6px 12px;
-  border-radius: 8px;
-  border: 1px solid rgba(255,255,255,0.08);
+  padding: 7px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
   transition: color 0.2s, border-color 0.2s;
 }
 
 .footer-social a:hover {
   color: var(--text);
-  border-color: rgba(92,140,255,0.4);
+  border-color: rgba(92, 140, 255, 0.5);
 }
 
 .footer-col h4 {
-  font-size: 13px;
+  font-size: 26px;
   font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--muted);
-  margin-bottom: 16px;
+  letter-spacing: 0.04em;
+  color: #9db3e8;
+  margin-bottom: 14px;
+  text-align: center;
 }
 
 .footer-col ul {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
   align-items: center;
 }
 
 .footer-col ul li a {
-  color: var(--muted);
+  color: #8fb0f0;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 30px;
+  line-height: 1.25;
   transition: color 0.2s;
 }
 
 .footer-col ul li a:hover {
-  color: var(--text);
+  color: #d2dfff;
 }
 
 .footer-bottom {
   width: min(1100px, 92%);
   margin: 0 auto;
-  padding: 16px 0 6px;
-  border-top: 1px solid rgba(255,255,255,0.05);
+  padding: 14px 0 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
   display: flex;
-  align-items: center;
   justify-content: center;
 }
 
 .footer-text {
-  color: var(--muted);
-  font-size: 13px;
+  color: #9ab2e7;
+  font-size: 20px;
   text-align: center;
 }
 
@@ -653,24 +663,23 @@ footer {
   }
 
   .footer-inner {
-  width: min(1100px, 92%);
-  margin: 0 auto;
-  padding: 44px 28px 30px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
-  text-align: center;
-  border-radius: 18px;
-  background: linear-gradient(180deg, rgba(17, 26, 50, 0.9), rgba(11, 17, 35, 0.9));
-  border: 1px solid rgba(92, 140, 255, 0.25);
-}
-  .footer-bottom {
-    flex-direction: column;
-    gap: 8px;
-    text-align: center;
+    grid-template-columns: 1fr;
+    gap: 22px;
+    padding: 26px 0 12px;
+  }
+  .footer-highlight {
+    min-height: 90px;
+    font-size: 16px;
+  }
+  .footer-col h4 {
+    font-size: 22px;
+  }
+  .footer-col ul li a {
+    font-size: 24px;
   }
   .footer-text {
     text-align: center;
+    font-size: 16px;
   }
 
   .whatsapp-float {
@@ -680,7 +689,6 @@ footer {
     font-size: 14px;
   }
 
-  /* Animação X */
   .nav-toggle.is-open .nav-toggle-bar:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
   }
@@ -691,7 +699,6 @@ footer {
     transform: translateY(-8px) rotate(-45deg);
   }
 }
-
 @media (max-width: 768px) {
   .section { padding: 60px 0; }
   .section-title { margin-bottom: 26px; }
@@ -775,6 +782,8 @@ footer {
 .nav-overlay.is-open {
   display: block;
 }
+
+
 
 
 
