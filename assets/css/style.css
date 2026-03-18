@@ -160,7 +160,7 @@ header {
   max-width: 760px;
   margin: 0 auto 30px;
   color: var(--muted);
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.7;
 }
 
@@ -465,10 +465,10 @@ footer {
 .footer-highlight {
   width: 100%;
   min-height: 110px;
-  border: 2px solid rgba(92, 140, 255, 0.9);
-  border-radius: 2px;
+  border: none;
+  border-radius: 0;
   color: var(--muted);
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
   line-height: 1.5;
   display: flex;
@@ -501,7 +501,7 @@ footer {
 }
 
 .footer-col h4 {
-  font-size: 26px;
+  font-size: 18px;
   font-weight: 700;
   letter-spacing: 0.04em;
   color: #9db3e8;
@@ -520,7 +520,7 @@ footer {
 .footer-col ul li a {
   color: #8fb0f0;
   text-decoration: none;
-  font-size: 30px;
+  font-size: 16px;
   line-height: 1.25;
   transition: color 0.2s;
 }
@@ -540,7 +540,7 @@ footer {
 
 .footer-text {
   color: #9ab2e7;
-  font-size: 20px;
+  font-size: 14px;
   text-align: center;
 }
 
@@ -669,17 +669,17 @@ footer {
   }
   .footer-highlight {
     min-height: 90px;
-    font-size: 16px;
+    font-size: 14px;
   }
   .footer-col h4 {
-    font-size: 22px;
+    font-size: 17px;
   }
   .footer-col ul li a {
-    font-size: 24px;
+    font-size: 15px;
   }
   .footer-text {
     text-align: center;
-    font-size: 16px;
+    font-size: 14px;
   }
 
   .whatsapp-float {
@@ -724,11 +724,11 @@ footer {
 
   .faq-question {
     padding: 14px 16px;
-    font-size: 16px;
+    font-size: 14px;
   }
 
   .faq-answer {
-    font-size: 16px;
+    font-size: 14px;
     padding: 0 16px;
   }
 
@@ -782,6 +782,8 @@ footer {
 .nav-overlay.is-open {
   display: block;
 }
+
+
 
 
 
