@@ -658,6 +658,8 @@ footer {
   }
   .nav-toggle {
     display: flex;
+    grid-column: 3;
+    justify-self: end;
   }
   .nav-desktop-cta {
     display: none;
@@ -785,7 +787,7 @@ footer {
 .nav-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.7);
+  background: transparent;
   display: none;
   z-index: 1000;
 }
