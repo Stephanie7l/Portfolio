@@ -77,44 +77,14 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     });
-
-    // 5. WhatsApp
-    function enviarWhatsApp(e) {
-        e.preventDefault();
-        const nome = document.getElementById("nome").value;
-        const servico = document.getElementById("servico").value;
-        const mensagem = document.getElementById("mensagem").value;
-
-        const texto = `Olá, meu nome é ${nome}. Orçamento para: ${servico}.\n\nDetalhes: ${mensagem}`;
-        window.open(`https://wa.me/5531985499733?text=${encodeURIComponent(texto)}`, "_blank");
-    }
 });
 
-// Menu Mobile
-const navToggle = document.querySelector(".nav-toggle");
-const primaryNav = document.getElementById("primary-navigation");
-const navOverlay = document.querySelector(".nav-overlay");
+function enviarWhatsApp(e) {
+    e.preventDefault();
+    const nome = document.getElementById("nome").value;
+    const servico = document.getElementById("servico").value;
+    const mensagem = document.getElementById("mensagem").value;
 
-if (!navToggle || !primaryNav || !navOverlay) return;
-
-const setMenuState = (open) => {
-    navToggle.setAttribute("aria-expanded", String(open));
-    primaryNav.classList.toggle("active", open);
-    navOverlay.classList.toggle("active", open);
-    document.body.classList.toggle("menu-open", open);
-};
-
-navToggle.addEventListener("click", () => {
-    const isOpen = navToggle.getAttribute("aria-expanded") === "true";
-    setMenuState(!isOpen);
-});
-
-navOverlay.addEventListener("click", () => setMenuState(false));
-
-primaryNav.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => setMenuState(false));
-});
-
-document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") setMenuState(false);
-});
+    const texto = `Olá, meu nome é ${nome}. Orçamento para: ${servico}.\n\nDetalhes: ${mensagem}`;
+    window.open(`https://wa.me/5531985499733?text=${encodeURIComponent(texto)}`, "_blank");
+}

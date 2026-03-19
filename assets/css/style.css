@@ -795,6 +795,32 @@ footer {
   display: block;
 }
 
+.nav-links.active {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  right: 0;
+  background: var(--bg-color);
+  padding: 2rem;
+  z-index: 999;
+}
+
+.nav-overlay.active {
+  display: block;
+  z-index: 998;
+}
+
+.faq-item.active .faq-answer {
+  display: block;
+}
+
+.faq-item.active .faq-chevron {
+  transform: rotate(180deg);
+}
+
 
 
 
