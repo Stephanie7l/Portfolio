@@ -9,36 +9,42 @@ document.addEventListener("DOMContentLoaded", () => {
     const overlay = document.querySelector(".nav-overlay");
     const body = document.body;
 
-    function toggleMenu() {
-        const isOpen = nav.classList.toggle("is-open");
-        toggle.classList.toggle("is-open");
-        overlay.classList.toggle("is-open");
-        toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-        body.style.overflow = isOpen ? "hidden" : "";
+    function setMenu(open) {
+        if (!toggle || !nav || !overlay) return;
+
+        // Compatível com CSS antigo/novo
+        nav.classList.toggle("is-open", open);
+        nav.classList.toggle("active", open);
+
+        toggle.classList.toggle("is-open", open);
+        toggle.classList.toggle("active", open);
+
+        overlay.classList.toggle("is-open", open);
+        overlay.classList.toggle("active", open);
+
+        toggle.setAttribute("aria-expanded", open ? "true" : "false");
+        body.style.overflow = open ? "hidden" : "";
     }
 
-    if (toggle) {
+    function toggleMenu() {
+        const open = !nav.classList.contains("is-open") && !nav.classList.contains("active");
+        setMenu(open);
+    }
+
+    if (toggle && nav && overlay) {
         toggle.addEventListener("click", toggleMenu);
-        overlay.addEventListener("click", toggleMenu);
-        
-        nav.querySelectorAll("a").forEach(link => {
-            link.addEventListener("click", () => {
-                if (nav.classList.contains("is-open")) toggleMenu();
-            });
+        overlay.addEventListener("click", () => setMenu(false));
+
+        nav.querySelectorAll("a").forEach((link) => {
+            link.addEventListener("click", () => setMenu(false));
         });
 
         document.addEventListener("keydown", (e) => {
-            if (e.key === "Escape" && nav.classList.contains("is-open")) toggleMenu();
+            if (e.key === "Escape") setMenu(false);
         });
 
         window.addEventListener("resize", () => {
-            if (window.innerWidth > 900 && nav.classList.contains("is-open")) {
-                nav.classList.remove("is-open");
-                toggle.classList.remove("is-open");
-                overlay.classList.remove("is-open");
-                toggle.setAttribute("aria-expanded", "false");
-                body.style.overflow = "";
-            }
+            if (window.innerWidth > 900) setMenu(false);
         });
     }
 
@@ -65,12 +71,10 @@ document.addEventListener("DOMContentLoaded", () => {
         btn.addEventListener("click", () => {
             const item = btn.closest(".faq-item");
             const isOpen = item.classList.contains("is-open");
-            // Fecha todos
             document.querySelectorAll(".faq-item.is-open").forEach(open => {
                 open.classList.remove("is-open");
-                open.querySelector(".faq-question").setAttribute("aria-expanded", "false");
+                open.querySelector(".faq-question")?.setAttribute("aria-expanded", "false");
             });
-            // Abre o clicado (se estava fechado)
             if (!isOpen) {
                 item.classList.add("is-open");
                 btn.setAttribute("aria-expanded", "true");
