@@ -64,7 +64,7 @@ header {
   display: flex;
   gap: 28px;
   align-items: center;
-  justify-self: center;
+  justify-self: end; /* antes: center */
 }
 .nav-links a {
   color: var(--muted);
@@ -632,38 +632,34 @@ footer {
 
   .nav-links {
     position: fixed;
-    top: 0;
+    top: 80px; /* abaixo do header */
     right: -100%;
-    height: 100vh;
+    height: calc(100vh - 80px);
     width: 280px;
-    background: var(--bg);
+    background: #0b0f1a; /* fundo sólido */
     flex-direction: column;
-    padding: 100px 20px;
-    transition: 0.4s;
+    align-items: flex-start;
+    padding: 20px;
+    transition: right 0.4s ease;
     z-index: 1050;
     gap: 8px;
   }
-  .nav-links a {
-    width: 100%;
-    min-height: 48px;
-    font-size: 18px;
-    border-radius: 10px;
-    padding: 0 12px;
-  }
-  .nav-links a:hover {
-    background: rgba(255, 255, 255, 0.05);
-  }
-  .nav-links.is-open {
+
+  .nav-links.is-open,
+  .nav-links.active {
     right: 0;
   }
+
   .nav-toggle {
     display: flex;
     grid-column: 3;
     justify-self: end;
   }
+
   .nav-desktop-cta {
     display: none;
   }
+
   .nav-cta {
     display: flex;
     width: 100%;
@@ -679,16 +675,20 @@ footer {
     gap: 22px;
     padding: 26px 0 12px;
   }
+
   .footer-highlight {
     min-height: 90px;
     font-size: 14px;
   }
+
   .footer-col h4 {
     font-size: 15px;
   }
+
   .footer-col ul li a {
     font-size: 13px;
   }
+
   .footer-text {
     text-align: center;
     font-size: 14px;
@@ -704,9 +704,11 @@ footer {
   .nav-toggle.is-open .nav-toggle-bar:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
   }
+
   .nav-toggle.is-open .nav-toggle-bar:nth-child(2) {
     opacity: 0;
   }
+
   .nav-toggle.is-open .nav-toggle-bar:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
   }
@@ -796,16 +798,13 @@ footer {
 }
 
 .nav-links.active {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  position: absolute;
-  top: 60px;
-  left: 0;
+  position: fixed;
+  top: 80px;
+  left: auto;
   right: 0;
-  background: var(--bg-color);
-  padding: 2rem;
-  z-index: 999;
+  background: #0b0f1a;
+  padding: 20px;
+  z-index: 1050;
 }
 
 .nav-overlay.active {
