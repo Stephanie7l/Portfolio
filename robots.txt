@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://stephanie7l.github.io/portfolio/sitemap.xml
+Sitemap: https://stephanie7l.github.io/Portfolio/sitemap.xml
