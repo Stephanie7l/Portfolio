@@ -1,3 +1,3 @@
-# Portifolio
+# Portfolio
 
-Portifólio pessoal
+Portfólio pessoal
